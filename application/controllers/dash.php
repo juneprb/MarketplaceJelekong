@@ -1,0 +1,12 @@
+<?php
+class Dash extends CI_Controller
+{
+    public function index()
+    {
+        $data['barang'] = $this->model_brg->tampil_data()->result();
+        $this->load->view('template/header');
+        $this->load->view('template/sidebar');
+        $this->load->view('dashboard', $data);
+        $this->load->view('template/footer');
+    }
+}
